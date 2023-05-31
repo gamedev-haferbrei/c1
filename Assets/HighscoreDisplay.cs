@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class HighscoreButton : MonoBehaviour
+public class HighscoreDisplay : MonoBehaviour
 {
     TextMeshProUGUI text;
 
@@ -11,12 +11,12 @@ public class HighscoreButton : MonoBehaviour
     void Start()
     {
         text = GetComponent<TextMeshProUGUI>();
+        text.text = $"Highscore: {GetHighscore()}";
     }
 
     // Update is called once per frame
     void Update()
     {
-        text.text = $"Highscore: {GetHighscore()}";
     }
 
     int GetHighscore() => PlayerPrefs.HasKey("Highscore") ? PlayerPrefs.GetInt("Highscore") : 0;
