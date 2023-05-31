@@ -6,11 +6,12 @@ using UnityEngine.SceneManagement;
 public class WaveManager : MonoBehaviour
 {
     [SerializeField] GameObject[] wavePrefabs;
-    [SerializeField] int currentWave = 0;
+    int currentWave = 0;
 
     // Start is called before the first frame update
     void Start()
     {
+        currentWave = Globals.requestedWave;
         LoadCurrentWave();
     }
 

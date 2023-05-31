@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PlayButton : MonoBehaviour
 {
+    public int requestedWave = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +20,7 @@ public class PlayButton : MonoBehaviour
 
     public void OnClick()
     {
-        Debug.Log("HEY");
+        Globals.requestedWave = requestedWave;
         SceneManager.LoadScene("Main");
     }
 }
