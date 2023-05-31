@@ -5048,7 +5048,7 @@ GameObject:
   - component: {fileID: 80010315}
   - component: {fileID: 80010314}
   m_Layer: 5
-  m_Name: Special Attacks
+  m_Name: Special Attack UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5365,7 +5365,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 00000000c1451df527d83f5e
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
@@ -6001,11 +6001,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1288027929}
-  - component: {fileID: 1288027928}
   - component: {fileID: 1288027927}
   - component: {fileID: 1288027930}
   - component: {fileID: 1288027931}
-  m_Layer: 0
+  - component: {fileID: 1288027932}
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6025,107 +6025,81 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  playerControls:
-    m_Name: Player Controls
+  movementControls:
+    m_Name: Movement Controls
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 7f905592-65ef-4e9d-9249-a9b700bfad91
+    m_Id: 74cb7fa2-06b9-4e5e-9075-dcfda3a9590f
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 2D Vector
-      m_Id: 80a995c2-4846-431c-9b21-d258afbd8b1d
+      m_Id: 399d4ae8-2084-42d1-818f-bfaa64dae8c2
       m_Path: 2DVector
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: Player Controls
+      m_Action: Movement Controls
       m_Flags: 4
     - m_Name: up
-      m_Id: 186424b4-10ae-4220-9434-176ae475fb52
+      m_Id: 2d04a80b-ff96-40b5-942c-c52f1de372dd
       m_Path: <Keyboard>/w
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: Player Controls
+      m_Action: Movement Controls
       m_Flags: 8
     - m_Name: down
-      m_Id: 2bf77b1b-39be-410d-99e0-8dba401c3e2a
+      m_Id: 7d47704e-4a4c-409d-a784-2772e339201c
       m_Path: <Keyboard>/s
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: Player Controls
+      m_Action: Movement Controls
       m_Flags: 8
     - m_Name: left
-      m_Id: 5f8b0947-f756-452d-a0c7-031c058cb8c3
+      m_Id: 9a9db885-6ce0-42bd-af4b-102891a5e009
       m_Path: <Keyboard>/a
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: Player Controls
+      m_Action: Movement Controls
       m_Flags: 8
     - m_Name: right
-      m_Id: 48cc1679-59c6-44ae-b7ec-0903627aefa6
+      m_Id: 0a12069d-f9a9-46c7-b8ca-83cc438441d5
       m_Path: <Keyboard>/d
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: Player Controls
+      m_Action: Movement Controls
       m_Flags: 8
     m_Flags: 0
---- !u!212 &1288027928
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1288027926}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e0180f26a39a77845922d5f6a4159c7a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1.12, y: 0.75}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
+  basicShootControls:
+    m_Name: Basic Shoot Controls
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 4a9d0bba-3577-4c09-be4f-8a1bf246c7c4
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: b1bc068c-0572-4b37-9e10-f75bb28306a8
+      m_Path: <Mouse>/leftButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Basic Shoot Controls
+      m_Flags: 0
+    - m_Name: 
+      m_Id: e7a18a10-17a3-4825-94a4-2d3b04ace00c
+      m_Path: <Keyboard>/space
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Basic Shoot Controls
+      m_Flags: 0
+    m_Flags: 0
+  laserPrefab: {fileID: 507795238525354099, guid: ed7a4e525e7719a448a0df4e28260db8, type: 3}
 --- !u!4 &1288027929
 Transform:
   m_ObjectHideFlags: 0
@@ -6134,7 +6108,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1288027926}
   m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -7.32, y: 0.51, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6178,6 +6152,58 @@ CircleCollider2D:
   m_Offset: {x: -0.014587164, y: -0.08350146}
   serializedVersion: 2
   m_Radius: 0.27235007
+--- !u!212 &1288027932
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288027926}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 1581242407
+  m_SortingLayer: 2
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: e0180f26a39a77845922d5f6a4159c7a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1.12, y: 0.75}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &1473227031
 GameObject:
   m_ObjectHideFlags: 0
@@ -6489,8 +6515,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 80010313}
     m_Modifications:
     - target: {fileID: 1590208889130454574, guid: 308956c859395474baa46c786b491de3, type: 3}
+      propertyPath: attackAction.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590208889130454574, guid: 308956c859395474baa46c786b491de3, type: 3}
       propertyPath: attackControls.m_SingletonActionBindings.Array.size
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590208889130454574, guid: 308956c859395474baa46c786b491de3, type: 3}
+      propertyPath: attackAction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1590208889130454574, guid: 308956c859395474baa46c786b491de3, type: 3}
       propertyPath: attackControls.m_SingletonActionBindings.Array.data[0].m_Id
@@ -6500,6 +6534,10 @@ PrefabInstance:
       propertyPath: attackControls.m_SingletonActionBindings.Array.data[1].m_Id
       value: 89ab2b02-c408-4884-9cf4-ad23f6cb5d47
       objectReference: {fileID: 0}
+    - target: {fileID: 1590208889130454574, guid: 308956c859395474baa46c786b491de3, type: 3}
+      propertyPath: attackAction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1288027927}
     - target: {fileID: 1590208889130454574, guid: 308956c859395474baa46c786b491de3, type: 3}
       propertyPath: attackControls.m_SingletonActionBindings.Array.data[0].m_Path
       value: <Keyboard>/1
@@ -6515,6 +6553,22 @@ PrefabInstance:
     - target: {fileID: 1590208889130454574, guid: 308956c859395474baa46c786b491de3, type: 3}
       propertyPath: attackControls.m_SingletonActionBindings.Array.data[1].m_Action
       value: Attack Controls
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590208889130454574, guid: 308956c859395474baa46c786b491de3, type: 3}
+      propertyPath: attackAction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590208889130454574, guid: 308956c859395474baa46c786b491de3, type: 3}
+      propertyPath: attackAction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ShootTripleLaser
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590208889130454574, guid: 308956c859395474baa46c786b491de3, type: 3}
+      propertyPath: attackAction.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Player, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1590208889130454574, guid: 308956c859395474baa46c786b491de3, type: 3}
+      propertyPath: attackAction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5026892755411388120, guid: 308956c859395474baa46c786b491de3, type: 3}
       propertyPath: m_RootOrder

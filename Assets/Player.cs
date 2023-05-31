@@ -6,19 +6,28 @@ using UnityEngine.InputSystem;
 public class Player : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 5f;
-    [SerializeField] InputAction playerControls;
+
+    [SerializeField] InputAction movementControls;
+    [SerializeField] InputAction basicShootControls;
+    // For the special attack controls look at Special Attack UI in the hierarchy
+
+    [SerializeField] GameObject laserPrefab;
 
     Vector2 moveDirection;
     Rigidbody2D rb;
 
     private void OnEnable()
     {
-        playerControls.Enable();
+        movementControls.Enable();
+        basicShootControls.Enable();
+
+        basicShootControls.performed += ctx => ShootLaser();
     }
 
     private void OnDisable()
     {
-        playerControls.Disable();
+        movementControls.Disable();
+        basicShootControls.Enable();
     }
 
     // Start is called before the first frame update
@@ -30,11 +39,23 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moveDirection = playerControls.ReadValue<Vector2>();
+        moveDirection = movementControls.ReadValue<Vector2>();
     }
 
     private void FixedUpdate()
     {
         rb.velocity = moveDirection * moveSpeed;
+    }
+
+    public void ShootLaser()
+    {
+        Instantiate(laserPrefab, transform.position, Quaternion.Euler(0f, 0f, -90f));
+    }
+
+    public void ShootTripleLaser()
+    {
+        Instantiate(laserPrefab, transform.position + new Vector3(-0.3f, -0.3f), Quaternion.Euler(0f, 0f, -90f));
+        Instantiate(laserPrefab, transform.position, Quaternion.Euler(0f, 0f, -90f));
+        Instantiate(laserPrefab, transform.position + new Vector3(-0.3f, 0.3f), Quaternion.Euler(0f, 0f, -90f));
     }
 }

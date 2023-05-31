@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
@@ -9,6 +10,7 @@ public class SpecialAttackDisplay : MonoBehaviour
     [SerializeField] Image fill;
     [SerializeField] InputAction attackControls;
     [SerializeField] float cooldownLength = 1f;
+    [SerializeField] UnityEvent attackAction;
 
     float cooldownTimer = 0f;
 
@@ -27,6 +29,7 @@ public class SpecialAttackDisplay : MonoBehaviour
     {
         if (cooldownTimer > 0f) return;
         cooldownTimer = 1f;
+        attackAction.Invoke();
     }
 
     // Start is called before the first frame update
