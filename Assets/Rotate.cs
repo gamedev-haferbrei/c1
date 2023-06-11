@@ -2,21 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyLaser : MonoBehaviour
+public class Rotate : MonoBehaviour
 {
-    Rigidbody2D rb;
-    [SerializeField] float speed = 4f;
-
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        rb.velocity = transform.rotation * new Vector2(-speed, 0);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        transform.Rotate(new Vector3(0f, 0f, 100 * Time.deltaTime));
     }
 }

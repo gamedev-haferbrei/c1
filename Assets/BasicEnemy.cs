@@ -15,6 +15,7 @@ public class BasicEnemy : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
         rb.velocity = movementSpeed * new Vector2(0, Random.Range(0, 1) == 1 ? 1 : -1);
 
         InvokeRepeating(nameof(Shoot), Random.Range(0f, shootingFrequency), shootingFrequency);
@@ -22,7 +23,7 @@ public class BasicEnemy : MonoBehaviour
 
     void Shoot()
     {
-        Instantiate(projectilePrefab, transform.position, Quaternion.Euler(0f, 0f, -90f));
+        Instantiate(projectilePrefab, transform.position, Quaternion.identity);
     }
 
     private void OnTriggerEnter2D(Collider2D collider)

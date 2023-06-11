@@ -5,12 +5,12 @@ using UnityEngine;
 public class DespawnWhenInvisible : MonoBehaviour
 {
     int invisibleFrames = 0;
-    SpriteRenderer spriteRenderer;
+    [SerializeField] SpriteRenderer spriteRenderer;
 
     // Start is called before the first frame update
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        if (spriteRenderer == null) spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
