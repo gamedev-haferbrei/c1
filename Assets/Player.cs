@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     private void OnDisable()
     {
         movementControls.Disable();
-        basicShootControls.Enable();
+        basicShootControls.Disable();
     }
 
     // Start is called before the first frame update

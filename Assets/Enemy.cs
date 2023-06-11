@@ -5,7 +5,10 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     Wave wave = null;
+    DamageTextController damageTextController;
 
+    [SerializeField] int hp = 3;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -16,11 +19,19 @@ public class Enemy : MonoBehaviour
         // This should be on the projectile later. Just for quick and dirty testing!
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player Projectile"))
         {
-            Die();
+            Damage(1);
         }
     }
 
+    public void Damage(int amount)
+    {
+        hp -= amount;
+        damageTextController.DrawText(transform.position, amount.ToString());
+        if (hp <= 0) Die();
+    }
+
     public void SetWave(Wave wave) => this.wave = wave;
+    public void SetDamageTextController(DamageTextController damageTextController) => this.damageTextController = damageTextController;
 
     // Update is called once per frame
     void Update()

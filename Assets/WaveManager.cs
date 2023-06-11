@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class WaveManager : MonoBehaviour
 {
     [SerializeField] GameObject[] wavePrefabs;
+    [SerializeField] DamageTextController damageTextController;
+
     int currentWave = 0;
 
     // Start is called before the first frame update
@@ -14,6 +16,8 @@ public class WaveManager : MonoBehaviour
         currentWave = Globals.requestedWave;
         LoadCurrentWave();
     }
+
+    public DamageTextController GetDamageTextController() => damageTextController;
 
     public void LoadNextWave()
     {

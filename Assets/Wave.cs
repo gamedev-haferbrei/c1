@@ -13,6 +13,7 @@ public class Wave : MonoBehaviour
         foreach (Enemy enemy in GetComponentsInChildren<Enemy>())
         {
             enemy.SetWave(this);
+            enemy.SetDamageTextController(waveManager.GetDamageTextController());
             liveEnemies++;
         }
     }
