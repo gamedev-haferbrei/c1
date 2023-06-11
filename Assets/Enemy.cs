@@ -14,15 +14,6 @@ public class Enemy : MonoBehaviour
     {
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        // This should be on the projectile later. Just for quick and dirty testing!
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Player Projectile"))
-        {
-            Damage(1);
-        }
-    }
-
     public void Damage(int amount)
     {
         hp -= amount;

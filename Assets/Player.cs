@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     [SerializeField] InputAction basicShootControls;
     // For the special attack controls look at Special Attack UI in the hierarchy
 
+    [SerializeField] WaveManager waveManager;
+
     [SerializeField] GameObject laserPrefab;
 
     Vector2 moveDirection;
@@ -57,5 +59,11 @@ public class Player : MonoBehaviour
         Instantiate(laserPrefab, transform.position + new Vector3(-0.3f, -0.3f), Quaternion.Euler(0f, 0f, -90f));
         Instantiate(laserPrefab, transform.position, Quaternion.Euler(0f, 0f, -90f));
         Instantiate(laserPrefab, transform.position + new Vector3(-0.3f, 0.3f), Quaternion.Euler(0f, 0f, -90f));
+    }
+
+    // This just kills the player in all cases, but maybe the player could have HP as well? Might get too complicated
+    public void Damage(int damage)
+    {
+        waveManager.GameOver();
     }
 }

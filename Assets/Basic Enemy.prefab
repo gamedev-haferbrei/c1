@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d5bea96dd0358c4e9c680e88a388976, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 3
 --- !u!50 &1617849798802763228
 Rigidbody2D:
   serializedVersion: 4
@@ -108,7 +109,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3988576451095805434}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -149,3 +150,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 641000de82e1a8b40a0c807000afd6ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementSpeed: 2
+  shootingFrequency: 1
+  projectilePrefab: {fileID: 1437687442808341031, guid: 08d16732809e4db4a9b51e915608e90d, type: 3}
