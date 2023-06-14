@@ -8,7 +8,11 @@ public class Enemy : MonoBehaviour
     DamageTextController damageTextController;
 
     [SerializeField] int hp = 3;
-    
+    //[SerializeField] GameObject audioGO;
+    //AudioManager audioManager;
+    [SerializeField] AudioManager audioManager;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +20,7 @@ public class Enemy : MonoBehaviour
 
     public void Damage(int amount)
     {
+        audioManager.EnemyAudio();
         hp -= amount;
         damageTextController.DrawText(transform.position, amount.ToString());
         if (hp <= 0) Die();

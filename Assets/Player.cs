@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] InputAction movementControls;
     [SerializeField] InputAction basicShootControls;
+    [SerializeField] AudioManager audioManager;
     // For the special attack controls look at Special Attack UI in the hierarchy
 
     [SerializeField] WaveManager waveManager;
@@ -52,6 +53,7 @@ public class Player : MonoBehaviour
     public void ShootLaser()
     {
         Instantiate(laserPrefab, transform.position, Quaternion.Euler(0f, 0f, -90f));
+        audioManager.LaserAudio();
     }
 
     public void ShootTripleLaser()
@@ -59,11 +61,13 @@ public class Player : MonoBehaviour
         Instantiate(laserPrefab, transform.position + new Vector3(-0.3f, -0.3f), Quaternion.Euler(0f, 0f, -90f));
         Instantiate(laserPrefab, transform.position, Quaternion.Euler(0f, 0f, -90f));
         Instantiate(laserPrefab, transform.position + new Vector3(-0.3f, 0.3f), Quaternion.Euler(0f, 0f, -90f));
+        audioManager.LaserAudio();
     }
 
     // This just kills the player in all cases, but maybe the player could have HP as well? Might get too complicated
     public void Damage(int damage)
     {
+        audioManager.PlayerAudio();
         waveManager.GameOver();
     }
 }

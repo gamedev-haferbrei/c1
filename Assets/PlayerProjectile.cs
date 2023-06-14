@@ -5,6 +5,9 @@ using UnityEngine;
 public class PlayerProjectile : MonoBehaviour
 {
     [SerializeField] int damage = 1;
+    //[SerializeField] GameObject audioGO;
+    //AudioManager audioManager;
+
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +19,7 @@ public class PlayerProjectile : MonoBehaviour
     {
         if (collider.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
+            //audioManager.EnemyAudio();
             Enemy enemy = collider.gameObject.GetComponent<Enemy>();
             enemy.Damage(damage);
             Destroy(gameObject);
