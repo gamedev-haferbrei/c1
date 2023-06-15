@@ -29,8 +29,9 @@ public class AudioManager : MonoBehaviour
 
     public void GodModeAudio()
     {
-        backgroundSource.clip = godMode;
-        backgroundSource.Play();
+        //sounds.clip = godMode;
+        //backgroundSource.Play();
+        sounds.PlayOneShot(godMode, 0.75f);
     }
 
     public void BackgroundAudio()

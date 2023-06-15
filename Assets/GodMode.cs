@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GodMode : MonoBehaviour
 {
+    [SerializeField] AudioManager audioManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +14,11 @@ public class GodMode : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown("g"))
+        {
+            audioManager.GodModeAudio();
+        }
+
+
     }
 }
