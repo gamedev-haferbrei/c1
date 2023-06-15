@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hp: 3
-  audioManager: {fileID: 7632709261477234474, guid: a0e14818470fbe249b7e6a455d9627c3, type: 3}
+  audioManager: {fileID: 0}
 --- !u!50 &1617849798802763228
 Rigidbody2D:
   serializedVersion: 4

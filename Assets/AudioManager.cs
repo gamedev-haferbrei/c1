@@ -39,12 +39,13 @@ public class AudioManager : MonoBehaviour
         backgroundSource.Play();
     }
 
-    /* void Start()
+     void Start()
      {
+        gameObject.tag = "AudioManager";
 
-     }
+    }
 
-     // Update is called once per frame
+     /*// Update is called once per frame
      void Update()
      {
 

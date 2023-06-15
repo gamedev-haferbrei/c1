@@ -9,10 +9,13 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] int hp = 3;
     //[SerializeField] GameObject audioGO;
-    //AudioManager audioManager;
-    [SerializeField] AudioManager audioManager;
 
-
+    //[SerializeField] AudioManager audioManager;
+    //AudioManager audioManagerIns;
+    // [SerializeField] AudioSource source;
+    //[SerializeField] AudioClip clip;
+    //GameObject[] audioManager;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +23,10 @@ public class Enemy : MonoBehaviour
 
     public void Damage(int amount)
     {
+        GameObject audioManagerF = GameObject.FindWithTag("AudioManager");
+        AudioManager audioManager = audioManagerF.GetComponent<AudioManager>();
+        //AudioManager audioManagerF = System.Convert.ToAudioManager(audioManager);
+        //AudioManager audioManagerF = (AudioManager)audioManager;
         audioManager.EnemyAudio();
         hp -= amount;
         damageTextController.DrawText(transform.position, amount.ToString());

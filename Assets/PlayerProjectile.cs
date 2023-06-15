@@ -5,8 +5,9 @@ using UnityEngine;
 public class PlayerProjectile : MonoBehaviour
 {
     [SerializeField] int damage = 1;
-    //[SerializeField] GameObject audioGO;
+    //[SerializeField] AudioManager audioManager;
     //AudioManager audioManager;
+    
 
 
     // Start is called before the first frame update
