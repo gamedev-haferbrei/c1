@@ -17,6 +17,7 @@ public class GodMode : MonoBehaviour
         if (Input.GetKeyDown("g"))
         {
             audioManager.GodModeAudio();
+            Debug.Log("played G audio");
         }
 
 

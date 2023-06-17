@@ -67,6 +67,9 @@ public class Player : MonoBehaviour
     // This just kills the player in all cases, but maybe the player could have HP as well? Might get too complicated
     public void Damage(int damage)
     {
+        GameObject particleManagerF = GameObject.FindWithTag("ParticleManager");
+        ParticleManager particleManager = particleManagerF.GetComponent<ParticleManager>();
+        particleManager.Explode();
         audioManager.PlayerAudio();
         waveManager.GameOver();
     }

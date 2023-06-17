@@ -19,6 +19,7 @@ public class EnemyProjectile : MonoBehaviour
         {
             if (!godmode)
             {
+               
                 Player player = collider.gameObject.GetComponent<Player>();
                 player.Damage(damage);
                 Destroy(gameObject);
