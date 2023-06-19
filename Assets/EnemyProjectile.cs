@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyProjectile : MonoBehaviour
 {
     [SerializeField] int damage = 1;
-    bool godmode = false;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +17,9 @@ public class EnemyProjectile : MonoBehaviour
     {
         if (collider.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            if (!godmode)
+            GameObject godModeF = GameObject.FindWithTag("GodMode");
+            GodMode godMode = godModeF.GetComponent<GodMode>();
+            if (!godMode.godmode)
             {
                
                 Player player = collider.gameObject.GetComponent<Player>();
@@ -39,12 +41,7 @@ public class EnemyProjectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("g"))
-        {
-            //audioManager.GodModeAudio();
-            godmode = !godmode;
-            Debug.Log("godmode on");
-        }
+        
 
     }
 }

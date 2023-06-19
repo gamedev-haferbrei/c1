@@ -6,6 +6,7 @@ TagManager:
   tags:
   - AudioManager
   - ParticleManager
+  - GodMode
   layers:
   - Default
   - TransparentFX
