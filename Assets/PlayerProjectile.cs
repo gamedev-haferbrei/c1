@@ -20,7 +20,6 @@ public class PlayerProjectile : MonoBehaviour
     {
         if (collider.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            //audioManager.EnemyAudio();
             Enemy enemy = collider.gameObject.GetComponent<Enemy>();
             enemy.Damage(damage);
             Destroy(gameObject);

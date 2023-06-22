@@ -28,15 +28,7 @@ public class EnemyProjectile : MonoBehaviour
             }
         }
     }
-    /*public void Godmode()
-    {
-        if (Input.GetKeyDown("g"))
-        {
-            //audioManager.GodModeAudio();
-            godmode = !godmode;
-            Debug.Log("godmode on");
-        }
-    }*/
+    
 
     // Update is called once per frame
     void Update()
