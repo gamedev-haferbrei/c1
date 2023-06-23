@@ -28,7 +28,7 @@ public class SpecialAttackDisplay : MonoBehaviour
     void DoAttack(InputAction.CallbackContext ctx)
     {
         if (cooldownTimer > 0f) return;
-        cooldownTimer = 1f;
+        cooldownTimer = cooldownLength;
         attackAction.Invoke();
     }
 

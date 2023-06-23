@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
     [SerializeField] WaveManager waveManager;
 
     [SerializeField] GameObject laserPrefab;
+    [SerializeField] GameObject homingRocketPrefab;
 
     Vector2 moveDirection;
     Rigidbody2D rb;
@@ -64,6 +65,11 @@ public class Player : MonoBehaviour
         audioManager.LaserAudio();
     }
 
+    public void ShootHomingRocket()
+    {
+        Instantiate(homingRocketPrefab, transform.position, Quaternion.identity);
+    }
+
     // This just kills the player in all cases, but maybe the player could have HP as well? Might get too complicated
     public void Damage(int damage)
     {
@@ -72,5 +78,10 @@ public class Player : MonoBehaviour
         particleManager.Explode();
         audioManager.PlayerAudio();
         waveManager.GameOver();
+    }
+
+    public void SpecialAttack2 ()
+    {
+        Instantiate(laserPrefab, transform.position, Quaternion.Euler(0f, 0f, -90f));
     }
 }

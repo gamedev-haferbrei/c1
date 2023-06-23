@@ -35,7 +35,7 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
-        if (wave != null) wave.RegisterDeath();
+        if (wave != null) wave.RegisterDeath(this);
         Destroy(gameObject);
     }
 }

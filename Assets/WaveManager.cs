@@ -8,6 +8,7 @@ public class WaveManager : MonoBehaviour
     [SerializeField] GameObject[] wavePrefabs;
     [SerializeField] DamageTextController damageTextController;
 
+    Wave activeWave;
     int currentWave = 0;
 
     // Start is called before the first frame update
@@ -34,7 +35,8 @@ public class WaveManager : MonoBehaviour
         }
 
         GameObject waveGO = Instantiate(wavePrefabs[currentWave], transform.position, Quaternion.identity, transform);
-        waveGO.GetComponent<Wave>().SetWaveManager(this);
+        activeWave = waveGO.GetComponent<Wave>();
+        activeWave.SetWaveManager(this);
     }
 
     public void GameOver()
@@ -44,6 +46,8 @@ public class WaveManager : MonoBehaviour
 
         SceneManager.LoadScene("Menu");
     }
+
+    public Wave GetActiveWave() => activeWave;
 
     // Update is called once per frame
     void Update()
