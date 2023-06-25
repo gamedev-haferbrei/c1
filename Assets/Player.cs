@@ -17,9 +17,14 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject laserPrefab;
     [SerializeField] GameObject homingRocketPrefab;
     [SerializeField] GameObject specialLaser;
+    [SerializeField] GameObject clonePrefab;
+    [SerializeField] GameObject clonePrefabD;
 
     Vector2 moveDirection;
     Rigidbody2D rb;
+    Transform tr;
+
+    float timer = 0;
 
     private void OnEnable()
     {
@@ -39,7 +44,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
+        tr = GetComponent<Transform>();
         
     }
 
@@ -47,6 +52,12 @@ public class Player : MonoBehaviour
     void Update()
     {
         moveDirection = movementControls.ReadValue<Vector2>();
+        if (basicShootControls.IsInProgress() && timer >= 0.5f)
+        { 
+            ShootLaser();
+            timer = 0;
+        }
+        timer += Time.deltaTime;
     }
 
     private void FixedUpdate()
@@ -76,9 +87,9 @@ public class Player : MonoBehaviour
     // This just kills the player in all cases, but maybe the player could have HP as well? Might get too complicated
     public void Damage(int damage)
     {
-        GameObject particleManagerF = GameObject.FindWithTag("ParticleManager");
-        ParticleManager particleManager = particleManagerF.GetComponent<ParticleManager>();
-        particleManager.Explode();
+        GameObject particleManager = GameObject.FindWithTag("ParticleManager");
+        ParticleSystem particleSystem = particleManager.GetComponent<ParticleSystem>();
+        particleSystem.Play();
         audioManager.PlayerAudio();
         waveManager.GameOver();
     }
@@ -87,6 +98,11 @@ public class Player : MonoBehaviour
     {
         //Instantiate(specialLaser, transform.position, Quaternion.identity);
         StartCoroutine(SpecialAttack2Doer());
+    }
+
+    public void BunshinNoJutsu()
+    {
+        StartCoroutine(SpawnClones());         
     }
 
     IEnumerator SpecialAttack2Doer()
@@ -102,5 +118,17 @@ public class Player : MonoBehaviour
         Instantiate(specialLaser, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(1);
         Instantiate(specialLaser, transform.position, Quaternion.identity);
+    }
+
+    IEnumerator SpawnClones()
+    {
+        int i = 0;
+        while (i < 3) 
+        { 
+            Instantiate(clonePrefab, transform.position, Quaternion.Euler(0f, 0f, -90f));
+            Instantiate(clonePrefabD, transform.position, Quaternion.Euler(0f, 0f, -90f));
+            i++;
+            yield return new WaitForSeconds(0.5f);
+        }
     }
 }
