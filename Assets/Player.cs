@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
 
     [SerializeField] GameObject laserPrefab;
     [SerializeField] GameObject homingRocketPrefab;
+    [SerializeField] GameObject specialLaser;
 
     Vector2 moveDirection;
     Rigidbody2D rb;
@@ -38,6 +39,8 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        
     }
 
     // Update is called once per frame
@@ -82,6 +85,22 @@ public class Player : MonoBehaviour
 
     public void SpecialAttack2 ()
     {
-        Instantiate(laserPrefab, transform.position, Quaternion.Euler(0f, 0f, -90f));
+        //Instantiate(specialLaser, transform.position, Quaternion.identity);
+        StartCoroutine(SpecialAttack2Doer());
+    }
+
+    IEnumerator SpecialAttack2Doer()
+    {
+        //https://stackoverflow.com/questions/30056471/how-to-make-the-script-wait-sleep-in-a-simple-way-in-unity
+        //Print the time of when the function is first called.
+        Instantiate(specialLaser, transform.position, Quaternion.identity);
+
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(1);
+
+        //After we have waited 5 seconds print the time again.
+        Instantiate(specialLaser, transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(1);
+        Instantiate(specialLaser, transform.position, Quaternion.identity);
     }
 }
